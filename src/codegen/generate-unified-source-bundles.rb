@@ -381,8 +381,8 @@ if $mode != :PrintAllSources
 end
 
 if $mode == :GenerateXCFilelists
-    IO::write($inputXCFilelistPath, $inputSources.sort.join("\n") + "\n") if $inputXCFilelistPath
-    IO::write($outputXCFilelistPath, $outputSources.sort.join("\n") + "\n") if $outputXCFilelistPath
+    File.write($inputXCFilelistPath, $inputSources.sort.join("\n") + "\n") if $inputXCFilelistPath
+    File.write($outputXCFilelistPath, $outputSources.sort.join("\n") + "\n") if $outputXCFilelistPath
 end
 
 # We use stdout to report our unified source list to CMake.
